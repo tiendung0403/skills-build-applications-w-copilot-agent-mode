@@ -20,12 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-25rsll_s*6ml5lv4l$51z6x!y5u_k!11f!hf^1&%q!$syk=ja3"
+SECRET_KEY = "django-insecure-i60n&y_3ubm@)rg7-72u9^z0q_yua07u!+$0)sxb5n-)lhy8ve"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'congenial-robot-pwrx4jxpp9c6vjv-8000.app.github.dev']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -37,23 +37,17 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'rest_framework',
-    'djongo',
-    'corsheaders',
-    'monafit_tracker',
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
-    "corsheaders.middleware.CorsMiddleware", 
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
-
 
 ROOT_URLCONF = "monafit_tracker.urls"
 
@@ -80,11 +74,9 @@ WSGI_APPLICATION = "monafit_tracker.wsgi.application"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'monafit_db',
-        'HOST': 'localhost',
-        'PORT': 27017,
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
 
@@ -129,5 +121,3 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-CORS_ALLOW_ALL_ORIGINS = True
