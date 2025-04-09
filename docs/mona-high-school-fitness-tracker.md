@@ -139,8 +139,7 @@ mongo --eval "db = db.getSiblingDB('monafit_db'); db.createCollection('users'); 
 ### Check the database collections
 
 ```bash
-mongo --eval "db = db.getSiblingDB('monafit_db'); printjson(db.getCollectionNames());"
-```
+w```
 
 ### Sample settings.py
 
