@@ -23,6 +23,7 @@ nav ul {
   margin: 0;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap; /* Allow items to wrap on small screens */
 }
 
 nav ul li {
@@ -151,5 +152,64 @@ button:hover {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Media queries for mobile responsiveness */
+@media (max-width: 768px) {
+  /* Make the navigation links stack vertically */
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 0.5rem 0;
+  }
+
+  nav ul li a {
+    font-size: 1.5rem; /* Larger font size for easier readability */
+  }
+
+  /* Adjust the table to fit the screen better */
+  table {
+    width: 100%;
+    font-size: 0.9rem; /* Slightly smaller font size for table content */
+  }
+
+  table th, table td {
+    padding: 0.8rem;
+  }
+
+  /* Make the h1 smaller for mobile screens */
+  h1 {
+    font-size: 2rem;
+  }
+
+  /* Adjust the button size */
+  button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+/* Additional media query for very small screens (like phones in portrait mode) */
+@media (max-width: 480px) {
+  /* Further adjust font sizes for better mobile experience */
+  nav ul li a {
+    font-size: 1.2rem;
+  }
+
+  .component-text {
+    font-size: 1.5rem;
+  }
+
+  /* Make table content readable on small screens */
+  table {
+    font-size: 0.8rem;
+  }
+
+  table th, table td {
+    padding: 0.6rem;
   }
 }
